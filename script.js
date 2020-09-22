@@ -17,6 +17,9 @@ try {
 function handleElements() {
     var arrayConversa = document.querySelectorAll('div.lpc_message__text_agent');
     for(var i = 0; i < arrayConversa.length; i++ ){
-      alert(arrayConversa[i].innerHTML);
+      //alert(arrayConversa[i].innerHTML);
+      if(arrayConversa[i].innerHTML.includes('#')){
+        arrayConversa[i].style.fontSize = "xx-large";
+      }
     } 
   }

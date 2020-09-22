@@ -15,9 +15,9 @@ try {
 }
 
 function handleElements() {
-    var text = document.getElementsById('#transcript_bubble_agent_text').Value;
+    var text = document.querySelector('div.lpc_message__text_agent').innerHTML;
     alert(text);
     if(text.include("#")){
-      document.getElementsById('#transcript_bubble_agent_text').style.color = "#FF5733";
+      document.querySelector('div.lpc_message__text_agent').style.color = "#FF5733";
     }
   }

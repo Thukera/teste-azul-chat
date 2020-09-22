@@ -15,10 +15,9 @@ try {
 }
 
   function handleElements() {
-    var text = document.querySelector(' div.lpc_message__text_agent');
+    var text = document.querySelector('div.lpc_message__text_agent');
     alert(text);
     if(text.include("#")){
-      document.querySelector(' div.lpc_message__text_agent').style.color = "#FF5733";
+      document.querySelector('div.lpc_message__text_agent').style.color = "#FF5733";
     }
   }
-

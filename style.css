@@ -10,5 +10,11 @@
     color: #000 !important;
 }
 
+.lpc_desktop.lpc_card {
+    border: 1px solid #fff !important;
+    border-radius: 20px 20px 20px 0 !important;
+    overflow: hidden !important;
+    max-width: none !important;
+}
   
   

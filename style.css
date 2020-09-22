@@ -1,13 +1,14 @@
 .lpc_desktop.lpc_card__button {
     border-top: 1px solid #ffffff !important;
-    background: #dfd7f5 !important;
+    background: #ffffff !important;
 
 }
 
 .lpc_desktop.lpc_card__button button {
-    background: #e7e4e3 !important;
+    background: #026CB6!important;
     margin-bottom: 0 !important;
-    color: #000 !important;
+    color: #f7f7f7 !important;
+    border-radius: 20px 20px 20px !important
 }
 
 .lpc_desktop.lpc_card {

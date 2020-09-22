@@ -1,25 +1,21 @@
-try {
-  setTimeout(function () {
-    lpTag.hooks.push({
-      name: "AFTER_GET_LINES",
-      callback: function (data) {
-       if (data.data.lines.length && data.data.lines[0].text) {
-            setTimeout(handleElements, 500);
-          }
-        return data;
-      }
-    });
-  }, 100);
-} catch (e) {
-  console.dir(e.message);
+.lpc_desktop.lpc_card__button {
+    border-top: 1px solid #ffffff !important;
+    background: #ffffff !important;
+
 }
 
-  function handleElements() {
-    var text = document.querySelector(' div.lpc_message__text_agent');
-    alert(text);
-    if(text.include("#")){
-      document.querySelector(' div.lpc_message__text_agent').style.color = "#FF5733";
-    }
-  }
+.lpc_desktop.lpc_card__button button {
+    background: #026CB6!important;
+    margin-bottom: 0 !important;
+    color: #f7f7f7 !important;
+    border-radius: 20px 20px 20px !important
+}
+
+.lpc_desktop.lpc_card {
+    border: 1px solid #fff !important;
+    border-radius: 20px 20px 20px 0 !important;
+    overflow: hidden !important;
+    max-width: none !important;
+}
   
   

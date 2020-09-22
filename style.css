@@ -1,29 +1,6 @@
-
-/* CSS para cabeçalho */ 
-@media only screen and (max-width: 391px) {
-  
-
-   
-  }
-  
-  @media only screen and (min-width: 392px) and (max-width: 767px) {
-    
-    
-  }
-
-  /*para alinhamento da aba de procura, css puro */
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
-
-    
-    
-  }
-
-  @media only screen and (min-width: 992px) {
-
-   
-
-    
-  }
+.lpc_desktop.lpc_card__button {
+    border-top: 1px solid rgb(14, 13, 13) !important;
+}
 
 
 

@@ -15,7 +15,7 @@ try {
 }
 
 function handleElements() {
-    var text = document.querySelector('div.lpc_message__text_agent').innerHTML;
+    var text = document.querySelectorAll('div.lpc_message__text_agent').innerHTML;
     alert(text);
     if(text.include("#")){
       document.querySelector('div.lpc_message__text_agent').style.color = "#FF5733";

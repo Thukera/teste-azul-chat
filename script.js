@@ -15,9 +15,8 @@ try {
 }
 
 function handleElements() {
-    var text = document.querySelectorAll('div.lpc_message__text_agent').innerHTML;
-    alert(text);
-    if(text.include("#")){
-      document.querySelector('div.lpc_message__text_agent').style.color = "#FF5733";
-    }
+    var arrayConversa = document.querySelectorAll('div.lpc_message__text_agent');
+    for(var i = 0; i < arrayConversa.length; i++ ){
+      alert(text[i].innerHTML);
+    } 
   }

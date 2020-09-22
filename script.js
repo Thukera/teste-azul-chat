@@ -17,6 +17,6 @@ try {
 function handleElements() {
     var arrayConversa = document.querySelectorAll('div.lpc_message__text_agent');
     for(var i = 0; i < arrayConversa.length; i++ ){
-      alert(text[i].innerHTML);
+      alert(arrayConversa[i].innerHTML);
     } 
   }

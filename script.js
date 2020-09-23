@@ -26,7 +26,7 @@ function handleMarkdowns() {
     for(var i = 0; i < arrayConversa.length; i++ ){
       //alert(arrayConversa[i].innerHTML);
       if(arrayConversa[i].innerHTML.includes('#')){
-        arrayConversa[i].style.fontSize = "xx-large";
+        arrayConversa[i].style.fontSize = "large";
       }
     } 
 }

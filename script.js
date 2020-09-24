@@ -27,16 +27,16 @@ function handleMarkdowns() {
       //alert(arrayConversa[i].innerHTML);
            
       
-      //altera # para titulo
-          if(arrayConversa[i].innerHTML.includes('#')){
+     //altera # para titulo
+          if(arrayConversa[i].innerHTML.indexOf('# ') == 0 ){
             var str = arrayConversa[i].innerHTML;
             str = str.substring(2, str.length);
             arrayConversa[i].innerHTML = str; 
             arrayConversa[i].style.fontSize = "large";
          }
          
-        //Cria tabela a partir de *
-         if(arrayConversa[i].innerHTML.includes('*')){
+         //Cria tabela a partir de *
+         if(arrayConversa[i].innerHTML.indexOf('* ') == 0 ){
            var lista = arrayConversa[i].innerHTML;
            var linhas = arrayConversa[i].innerHTML.split('*');
            var ul = document.createElement("ul");
@@ -44,12 +44,12 @@ function handleMarkdowns() {
            
            for (var x = 0 ;x< linhas.length;x++){
              li.setAttribute("id", "linha_0"+ x );
-             alert(linhas[x]);
+             
              li.appendChild(document.createTextNode(linhas[x]));
              ul.appendChild(li);
            }
-           alert(ul);
-           arrayConversa[i].replaceWith(ul);
+           
+           arrayConversa[i].appendChild(ul);
        } 
       
       }

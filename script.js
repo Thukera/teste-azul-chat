@@ -17,6 +17,7 @@ try {
   function handleElements() {
     handleMarkdowns();
     handleButtons();
+    handleImages();
 }
 
 
@@ -27,7 +28,7 @@ function handleMarkdowns() {
       //alert(arrayConversa[i].innerHTML);
            
       
-     //altera # para titulo
+      //altera # para titulo
           if(arrayConversa[i].innerHTML.indexOf('# ') == 0 ){
             var str = arrayConversa[i].innerHTML;
             str = str.substring(2, str.length);
@@ -51,9 +52,17 @@ function handleMarkdowns() {
            arrayConversa[i].innerHTML = "";
            arrayConversa[i].appendChild(ul);
        } 
-      
+
       }
     } 
+
+
+    function handleImages() {
+      const div_images = document.querySelectorAll('div.lp_card__image');
+      div_images.forEach((dimage, i) => {
+              dimage.parentNode.style.maxWidth = 'none !important';
+      });
+   }
 
 function handleButtons() {
     const div_lines = document.querySelectorAll('div.lp_chat_line_wrapper');

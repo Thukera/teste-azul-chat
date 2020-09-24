@@ -37,7 +37,7 @@ function handleMarkdowns() {
          
          //Cria tabela a partir de *
          if(arrayConversa[i].innerHTML.includes('*')){
-          alert(arrayConversa[i].innerHTML);
+          //alert(arrayConversa[i].innerHTML);
            var lista = arrayConversa[i].innerHTML;
            var linhas = arrayConversa[i].innerHTML.split('*');
            var ul = document.createElement("ul");

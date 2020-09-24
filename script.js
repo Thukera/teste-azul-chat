@@ -58,7 +58,7 @@ function handleMarkdowns() {
 
 
     function handleImages() {
-      const div_images = document.querySelectorAll('div.lp_card__image');
+      const div_images = document.querySelectorAll('div.lpc_card__image');
       div_images.forEach((dimage, i) => {
               dimage.parentNode.style.maxWidth = 'none !important';
       });

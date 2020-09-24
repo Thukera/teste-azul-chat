@@ -35,20 +35,21 @@ function handleMarkdowns() {
             arrayConversa[i].style.fontSize = "large";
          }
          
-         //Cria tabela a partir de *
+        //Cria tabela a partir de *
          if(arrayConversa[i].innerHTML.includes('*')){
-          //alert(arrayConversa[i].innerHTML);
            var lista = arrayConversa[i].innerHTML;
            var linhas = arrayConversa[i].innerHTML.split('*');
            var ul = document.createElement("ul");
            var li = document.createElement("li");
-           arrayConversa[i].appendChild(ul);
+           
            for (var i = 0 ;i< linhas.length;i++){
+             li.setAttribute("id", "linha_0"+ i );
              li.appendChild(document.createTextNode(linhas[i]));
-             arrayConversa[i].appendChild(li);
+             ul.appendChild(li);
            }
-           alert(arrayConversa[i].innerHTML);
+           arrayConversa[i] = ul;
        } 
+      
       }
     } 
 

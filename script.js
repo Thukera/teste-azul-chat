@@ -48,7 +48,7 @@ function handleMarkdowns() {
              li.appendChild(document.createTextNode(linhas[x]));
              ul.appendChild(li);
            }
-           
+           arrayConversa[i].innerHTML = "";
            arrayConversa[i].appendChild(ul);
        } 
       

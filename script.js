@@ -35,7 +35,7 @@ function handleMarkdowns() {
             arrayConversa[i].style.fontSize = "large";
          }
          
-         //Cria tabela a partir de *
+        //Cria tabela a partir de *
          if(arrayConversa[i].innerHTML.includes('*')){
            var lista = arrayConversa[i].innerHTML;
            var linhas = arrayConversa[i].innerHTML.split('*');
@@ -44,11 +44,13 @@ function handleMarkdowns() {
            
            for (var x = 0 ;x< linhas.length;x++){
              li.setAttribute("id", "linha_0"+ x );
+             alert(linhas[x]);
              li.appendChild(document.createTextNode(linhas[x]));
              ul.appendChild(li);
            }
-           arrayConversa[i] = ul;
-       }  
+           alert(ul);
+           document.insertAdjacentElement(arrayConversa[i], ul);
+       } 
       
       }
     } 

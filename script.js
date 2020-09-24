@@ -49,7 +49,7 @@ function handleMarkdowns() {
              ul.appendChild(li);
            }
            alert(ul);
-           document.insertAdjacentElement(arrayConversa[i], ul);
+           arrayConversa[i].replaceWith(ul);
        } 
       
       }

@@ -48,16 +48,6 @@ function handleMarkdowns() {
            }
            alert(arrayConversa[i].innerHTML);
        } 
-        
-        
-
-
-        for(var i;i < lista.length;i++){
-          linhas.add = lista.split
-
-        }
-        
-        arrayConversa[i].style.fontSize = "xx-large";
       }
     } 
 
@@ -82,3 +72,4 @@ function handleButtons() {
         }
     }
  }
+

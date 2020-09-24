@@ -29,9 +29,10 @@ function handleMarkdowns() {
       
       //altera # para titulo
           if(arrayConversa[i].innerHTML.includes('#')){
-            alert(arrayConversa[i].innerHTML);
+            var str = arrayConversa[i].innerHTML;
+            str = str.substring(2, str.length);
+            arrayConversa[i].innerHTML = str; 
             arrayConversa[i].style.fontSize = "large";
-            arrayConversa[i].innerHTML = arrayConversa[i].innerHTML.substring(2, arrayConversa[i].innerHTML.length); 
          }
          
          //Cria tabela a partir de *

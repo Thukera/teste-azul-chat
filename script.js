@@ -25,8 +25,9 @@ function handleMarkdowns() {
     var arrayConversa = document.querySelectorAll('div.lpc_message__text_agent');
     for(var i = 0; i < arrayConversa.length; i++ ){
       //alert(arrayConversa[i].innerHTML);
+           
       
-     //altera # para titulo
+      //altera # para titulo
           if(arrayConversa[i].innerHTML.includes('#')){
             alert(arrayConversa[i].innerHTML);
             arrayConversa[i].style.fontSize = "large";
@@ -47,7 +48,19 @@ function handleMarkdowns() {
            }
            alert(arrayConversa[i].innerHTML);
        } 
-}
+        
+        
+
+
+        for(var i;i < lista.length;i++){
+          linhas.add = lista.split
+
+        }
+        
+        arrayConversa[i].style.fontSize = "xx-large";
+      }
+    } 
+
 function handleButtons() {
     const div_lines = document.querySelectorAll('div.lp_chat_line_wrapper');
     let last_button_line = null;

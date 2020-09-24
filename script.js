@@ -25,10 +25,24 @@ function handleMarkdowns() {
     var arrayConversa = document.querySelectorAll('div.lpc_message__text_agent');
     for(var i = 0; i < arrayConversa.length; i++ ){
       //alert(arrayConversa[i].innerHTML);
+      
+      //altera # para titulo
       if(arrayConversa[i].innerHTML.includes('#')){
-        arrayConversa[i] = arrayConversa[i].substring(2, arrayConversa[i].length);
+         arrayConversa[i].innerHTML = arrayConversa[i].innerHTML.substring(2, arrayConversa[i].innerHTML.length);
         arrayConversa[i].style.fontSize = "large";
       }
+      
+      //Cria tabela a partir de *
+      if(arrayConversa[i].innerHTML.includes('*')){
+        var lista = arrayConversa[i].innerHTML;
+        var linhas = arrayConversa[i].innerHTML.split('*');
+        var ul = document.createElement("ul");
+        var li = document.createElement("li");
+        arrayConversa[i].appendChild(ul);
+        for (var i = 0 ;i< linhas.length;i++){
+          li.appendChild(document.createTextNode(linhas[i]));
+          arrayConversa[i].appendChild(li);
+        }
     } 
 }
 function handleButtons() {

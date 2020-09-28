@@ -18,15 +18,14 @@ try {
     handleMarkdowns();
     handleButtons();
     handleImages();
+    handleBlankText();
 }
 
 
 function handleMarkdowns() {
-    // Arthur coloque o código de tratarmento do markdowns aqui
+
     var arrayConversa = document.querySelectorAll('div.lpc_message__text_agent');
     for(var i = 0; i < arrayConversa.length; i++ ){
-      //alert(arrayConversa[i].innerHTML);
-           
       
       //altera # para titulo
           if(arrayConversa[i].innerHTML.indexOf('# ') == 0 ){
@@ -35,6 +34,13 @@ function handleMarkdowns() {
             arrayConversa[i].innerHTML = str; 
             arrayConversa[i].style.fontSize = "large";
          }
+
+         if(arrayConversa[i].innerHTML.indexOf('_ ') == 0 ){
+          var str = arrayConversa[i].innerHTML;
+          str = str.substring(2, str.length);
+          arrayConversa[i].innerHTML = str; 
+          arrayConversa[i].style.textDecoration = "underline";
+       }
          
          //Cria tabela a partir de *
          if(arrayConversa[i].innerHTML.indexOf('* ') == 0 ){
@@ -55,6 +61,18 @@ function handleMarkdowns() {
 
       }
     } 
+
+
+    function handleBlankText() {
+      var arrayConversa = document.querySelectorAll('.lpc_card__text');
+      for(var i = 0; i < arrayConversa.length; i++ ){
+        //esconde div vazia      
+          //arrayConversa[i].style.visibility = "hidden";
+          var element = arrayConversa[i];
+          element.parentNode.removeChild(element);
+       
+      }
+    }
 
 
     function handleImages() {
@@ -81,6 +99,7 @@ function handleButtons() {
             if (div_buttons.length > 0) {
                 div_buttons[0].parentNode.style.pointerEvents = 'all';
                 div_buttons[0].parentNode.style.opacity = 1;
+                //div_buttons[0].parentNode.style.visibility = "hidden";
             }
         }
     }

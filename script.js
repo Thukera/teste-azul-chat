@@ -63,14 +63,16 @@ function handleMarkdowns() {
        //cria <hr> a partir das linhas
        if(arrayConversa[i].innerHTML.includes('-------------')){    
          var strTexto = arrayConversa[i].innerHTML;
-         strTexto.replace('-------------', "<hr>");
+         strTexto.replace('-------------', '<hr>');
          for(var i = 0; i <strTexto.length(); i++){
 
+
          }
+         strTexto.replace('---', '<hr>');
          strTexto.trim("__");
         arrayConversa[i].innerHTML = strTexto; 
 
-        //alert(strTexto);
+        alert(strTexto);
      }
 
       
@@ -83,10 +85,11 @@ function handleMarkdowns() {
       var arrayConversa = document.querySelectorAll('.lpc_card__text');
       for(var i = 0; i < arrayConversa.length; i++ ){
         //esconde div vazia      
-          //arrayConversa[i].style.visibility = "hidden";
-          var element = arrayConversa[i];
-          element.parentNode.removeChild(element);
-       
+         var textoElement = arrayConversa[i].textContent;
+          if(textoElement.length == 0 ){
+            var element = arrayConversa[i];    
+            element.parentNode.removeChild(element);
+          }   
       }
     }
 

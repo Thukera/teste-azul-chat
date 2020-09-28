@@ -25,6 +25,7 @@ try {
 function handleMarkdowns() {
 
     var arrayConversa = document.querySelectorAll('div.lpc_message__text_agent');
+    
     for(var i = 0; i < arrayConversa.length; i++ ){
       
       //altera # para titulo
@@ -57,7 +58,22 @@ function handleMarkdowns() {
            }
            arrayConversa[i].innerHTML = "";
            arrayConversa[i].appendChild(ul);
-       } 
+       }
+       
+       //cria <hr> a partir das linhas
+       if(arrayConversa[i].innerHTML.includes('-------------')){    
+         var strTexto = arrayConversa[i].innerHTML;
+         strTexto.replace('-------------', "<hr>");
+         for(var i = 0; i <strTexto.length(); i++){
+
+         }
+         strTexto.trim("__");
+        arrayConversa[i].innerHTML = strTexto; 
+
+        //alert(strTexto);
+     }
+
+      
 
       }
     } 
@@ -91,6 +107,8 @@ function handleButtons() {
             div_buttons[0].parentNode.style.pointerEvents = 'none';
             div_buttons[0].parentNode.style.opacity = 0.5;
             last_button_line = dline;
+            
+            
         }
     });
     if (last_button_line != null) {
@@ -100,6 +118,7 @@ function handleButtons() {
                 div_buttons[0].parentNode.style.pointerEvents = 'all';
                 div_buttons[0].parentNode.style.opacity = 1;
                 //div_buttons[0].parentNode.style.visibility = "hidden";
+                
             }
         }
     }

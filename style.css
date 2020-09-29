@@ -48,3 +48,17 @@
 .lpc_card__text {
   color: #041E42 !important;
 }
+
+.lp-window-root .lp_chat_line_wrapper.lp_agent .lp_new_chat_line.lp_line_grouped_body {
+  border-radius: 0 4px 4px 0;!important;
+}
+
+
+.lp-window-root .lp_chat_line_wrapper.lp_agent .lp_new_chat_line {
+  border-radius: 4px 4px 4px 0px!important;
+}
+ 
+
+.lp-window-root .lp_chat_line_wrapper .lp_rich_content_line {
+  width: 70%!important;
+}

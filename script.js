@@ -3,9 +3,9 @@ try {
     lpTag.hooks.push({
       name: "AFTER_GET_LINES",
       callback: function (data) {
-       if (data.data.lines.length && data.data.lines[0].text) {
-            setTimeout(handleElements, 500);
-          }
+        if (data.data.lines.length && data.data.lines[0].text) {
+          setTimeout(handleElements, 500);
+        }
         return data;
       }
     });
@@ -14,116 +14,75 @@ try {
   console.dir(e.message);
 }
 
-  function handleElements() {
-    handleMarkdowns();
-    handleButtons();
-    handleImages();
-    handleBlankText();
+
+//POP-UP
+document.getElementById('open-popup').addEventListener('click', (e) => {
+  window.open('index-popup.html', 'Atendimento Azul', "width=400, height=650, top=100, left=110, scrollbars=no ")
+});
+
+function handleElements() {
+  handleMarkdowns();
+  handleButtons();
+  handleImages();
+  handleBlankText();
 }
 
 
 function handleMarkdowns() {
 
-    var arrayConversa = document.querySelectorAll('div.lpc_message__text_agent');
-    
-    for(var i = 0; i < arrayConversa.length; i++ ){
-      
-      //altera # para titulo
-          if(arrayConversa[i].innerHTML.indexOf('# ') == 0 ){
-            var str = arrayConversa[i].innerHTML;
-            str = str.substring(2, str.length);
-            arrayConversa[i].innerHTML = str; 
-            arrayConversa[i].style.fontSize = "large";
-         }
+  var arrayConversa = document.querySelectorAll('div.lpc_message__text_agent');
+  for (var i = 0; i < arrayConversa.length; i++) {
 
-         if(arrayConversa[i].innerHTML.indexOf('_ ') == 0 ){
-          var str = arrayConversa[i].innerHTML;
-          str = str.substring(2, str.length);
-          arrayConversa[i].innerHTML = str; 
-          arrayConversa[i].style.textDecoration = "underline";
-       }
-         
-         //Cria tabela a partir de *
-         if(arrayConversa[i].innerHTML.indexOf('* ') == 0 ){
-           var lista = arrayConversa[i].innerHTML;
-           var linhas = arrayConversa[i].innerHTML.split('*');
-           var ul = document.createElement("ul");
-           var li = document.createElement("li");
-           
-           for (var x = 0 ;x< linhas.length;x++){
-             li.setAttribute("id", "linha_0"+ x );
-             
-             li.appendChild(document.createTextNode(linhas[x]));
-             ul.appendChild(li);
-           }
-           arrayConversa[i].innerHTML = "";
-           arrayConversa[i].appendChild(ul);
-       }
-       
-       //cria <hr> a partir das linhas
-       if(arrayConversa[i].innerHTML.includes('-------------')){    
-         var strTexto = arrayConversa[i].innerHTML;
-         strTexto.replace('-------------', '<hr>');
-         for(var i = 0; i <strTexto.length(); i++){
+    var str = arrayConversa[i].innerHTML;
+    str =  marked(str);
+    arrayConversa[i].innerHTML = str; 
+
+  }
+}
 
 
-         }
-         strTexto.replace('---', '<hr>');
-         strTexto.trim("__");
-        arrayConversa[i].innerHTML = strTexto; 
-
-        alert(strTexto);
-     }
-
-      
-
-      }
-    } 
-
-
-    function handleBlankText() {
-      var arrayConversa = document.querySelectorAll('.lpc_card__text');
-      for(var i = 0; i < arrayConversa.length; i++ ){
-        //esconde div vazia      
-         var textoElement = arrayConversa[i].textContent;
-          if(textoElement.length == 0 ){
-            var element = arrayConversa[i];    
-            element.parentNode.removeChild(element);
-          }   
-      }
+function handleBlankText() {
+  var arrayConversa = document.querySelectorAll('.lpc_card__text');
+  for (var i = 0; i < arrayConversa.length; i++) {
+    //esconde div vazia      
+    var textoElement = arrayConversa[i].textContent;
+    if (textoElement.length == 0) {
+      var element = arrayConversa[i];
+      element.parentNode.removeChild(element);
     }
+  }
+}
 
 
-    function handleImages() {
-      const div_images = document.querySelectorAll('div.lpc_card__image');
-      div_images.forEach((dimage, i) => {
-              dimage.parentNode.style.maxWidth = 'none !important';
-      });
-   }
+function handleImages() {
+  const div_images = document.querySelectorAll('div.lpc_card__image');
+  div_images.forEach((dimage, i) => {
+    dimage.parentNode.style.maxWidth = 'none !important';
+  });
+}
 
 function handleButtons() {
-    const div_lines = document.querySelectorAll('div.lp_chat_line_wrapper');
-    let last_button_line = null;
-    div_lines.forEach((dline, i) => {
-        let div_buttons = dline.querySelectorAll('div.lpc_card__button');
-        if (div_buttons.length > 0) {
-            div_buttons[0].parentNode.style.pointerEvents = 'none';
-            div_buttons[0].parentNode.style.opacity = 0.5;
-            last_button_line = dline;
-            
-            
-        }
-    });
-    if (last_button_line != null) {
-        if (div_lines[div_lines.length - 1].id == last_button_line.id) {
-            let div_buttons = last_button_line.querySelectorAll('div.lpc_card__button');
-            if (div_buttons.length > 0) {
-                div_buttons[0].parentNode.style.pointerEvents = 'all';
-                div_buttons[0].parentNode.style.opacity = 1;
-                //div_buttons[0].parentNode.style.visibility = "hidden";
-                
-            }
-        }
-    }
- }
+  const div_lines = document.querySelectorAll('div.lp_chat_line_wrapper');
+  let last_button_line = null;
+  div_lines.forEach((dline, i) => {
+    let div_buttons = dline.querySelectorAll('div.lpc_card__button');
+    if (div_buttons.length > 0) {
+      div_buttons[0].parentNode.style.pointerEvents = 'none';
+      div_buttons[0].parentNode.style.opacity = 0.5;
+      last_button_line = dline;
 
+
+    }
+  });
+  if (last_button_line != null) {
+    if (div_lines[div_lines.length - 1].id == last_button_line.id) {
+      let div_buttons = last_button_line.querySelectorAll('div.lpc_card__button');
+      if (div_buttons.length > 0) {
+        div_buttons[0].parentNode.style.pointerEvents = 'all';
+        div_buttons[0].parentNode.style.opacity = 1;
+        //div_buttons[0].parentNode.style.visibility = "hidden";
+
+      }
+    }
+  }
+}

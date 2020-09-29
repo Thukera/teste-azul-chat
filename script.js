@@ -16,9 +16,9 @@ try {
 
 
 //POP-UP
-document.getElementById('open-popup').addEventListener('click', (e) => {
-  window.open('index-popup.html', 'Atendimento Azul', "width=400, height=650, top=100, left=110, scrollbars=no ")
-});
+//document.getElementById('open-popup').addEventListener('click', (e) => {
+//  window.open('index-popup.html', 'Atendimento Azul', "width=400, height=650, top=100, left=110, scrollbars=no ")
+//});
 
 function handleElements() {
   handleMarkdowns();
@@ -31,11 +31,10 @@ function handleElements() {
 function handleMarkdowns() {
 
   var arrayConversa = document.querySelectorAll('div.lpc_message__text_agent');
-  for (var i = 0; i < arrayConversa.length; i++) {
-
+  for (var i = 0; i < arrayConversa.length; i++) {   
     var str = arrayConversa[i].innerHTML;
     str =  marked(str);
-    arrayConversa[i].innerHTML = str; 
+    //arrayConversa[i].innerHTML = str; 
 
   }
 }
